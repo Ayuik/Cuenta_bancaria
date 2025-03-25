@@ -77,9 +77,9 @@ public class BankAccountTest {
     @Test
     @DisplayName("Should print the values of the atributes")
     void testPrint(){
-        int deposits = 2;
-        int withdrawals = 3;
-        float monthlyfee = 30F;
+        myBankAccount.setDeposits(2);
+        myBankAccount.setMonthlyfee(30F);
+        myBankAccount.setWithdrawals(5);
         String values = myBankAccount.print();
         assertThat(values, is("Saldo: " + myBankAccount.getBalance() + 
         "\r\n Número de consignaciones: " + myBankAccount.getDeposits() + 
