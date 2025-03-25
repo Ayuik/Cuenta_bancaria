@@ -51,10 +51,10 @@ public class BankAccount {
         this.monthlyfee = monthlyfee;
     }
 
-    public void makeDeposit (int current_deposits, float deposit_money, float current_balance){
-        float updatedBalance = deposit_money + current_balance;
+    public void makeDeposit (float deposit_money){
+        float updatedBalance = deposit_money + getBalance();
         setBalance(updatedBalance);
-        int updatedDeposits = current_deposits + 1;
+        int updatedDeposits = getDeposits() + 1;
         setDeposits(updatedDeposits);
     }
 
