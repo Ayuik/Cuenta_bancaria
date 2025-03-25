@@ -71,6 +71,14 @@ public class BankAccount {
         setBalance(updatedBalance);
     }
 
+    public String print(){
+        String values = "Saldo: " + getBalance() + 
+        "\r\n Número de consignaciones: " + getDeposits() + 
+        "\\r\\n Número de retiros: " + getWithdrawals() + 
+        "\\r\\n Tasa anual: " + getAnnualinterest() +
+        "\r\n Comisión mensual: " + getMonthlyfee();
+        return values;
+    }
     
     
 }
