@@ -72,6 +72,5 @@ public class BankAccountTest {
         myBankAccount.setMonthlyfee(30F);
         myBankAccount.generateAccountStatement();
         assertThat(myBankAccount.getBalance(), is(979.7F));
-
     }
 }

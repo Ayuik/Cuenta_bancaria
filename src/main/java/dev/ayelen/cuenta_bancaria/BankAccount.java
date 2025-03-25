@@ -58,8 +58,16 @@ public class BankAccount {
         setDeposits(updatedDeposits);
     }
 
-    public void chargeMonthlyfee(){
+    public float chargeMonthlyfee(){
         float updatedBalance = getBalance() - getMonthlyfee();
+        setBalance(updatedBalance);
+        return updatedBalance;
+    }
+
+    public void generateAccountStatement(){
+       float balanceAfterFee = chargeMonthlyfee();
+        float monthlyinterest = balanceAfterFee * (getAnnualinterest() / 12F / 100F);
+        float updatedBalance = balanceAfterFee + monthlyinterest;
         setBalance(updatedBalance);
     }
 
