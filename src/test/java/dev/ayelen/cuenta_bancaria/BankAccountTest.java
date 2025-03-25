@@ -73,4 +73,18 @@ public class BankAccountTest {
         myBankAccount.generateAccountStatement();
         assertThat(myBankAccount.getBalance(), is(979.7F));
     }
+
+    @Test
+    @DisplayName("Should print the values of the atributes")
+    void testPrint(){
+        int deposits = 2;
+        int withdrawals = 3;
+        float monthlyfee = 30F;
+        String values = myBankAccount.print();
+        assertThat(values, is("Saldo: " + myBankAccount.getBalance() + 
+        "\r\n Número de consignaciones: " + myBankAccount.getDeposits() + 
+        "\\r\\n Número de retiros: " + myBankAccount.getWithdrawals() + 
+        "\\r\\n Tasa anual: " + myBankAccount.getAnnualinterest() +
+        "\r\n Comisión mensual: " + myBankAccount.getMonthlyfee()));
+    }
 }
