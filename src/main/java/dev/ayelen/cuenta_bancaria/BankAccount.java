@@ -58,6 +58,11 @@ public class BankAccount {
         setDeposits(updatedDeposits);
     }
 
+    public void chargeMonthlyfee(){
+        float updatedBalance = getBalance() - getMonthlyfee();
+        setBalance(updatedBalance);
+    }
+
     
     
 }
