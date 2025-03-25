@@ -2,17 +2,23 @@ package dev.ayelen.cuenta_bancaria;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class BankAccountTest {
 
+    BankAccount myBankAccount;
+
+    @BeforeEach
+    void setUp(){
+        myBankAccount = new BankAccount(1000F, 12F);
+    }
+
     @Test
     @DisplayName("Should create a bank account with values for balance and annualinterest")
     void testBankAccout() {
-        BankAccount myBankAccount = new BankAccount(1000F, 12F);
         int deposits = myBankAccount.getDeposits();
         int withdrawals = myBankAccount.getWithdrawals();
         float monthlyfee = myBankAccount.getMonthlyfee();
@@ -28,7 +34,6 @@ public class BankAccountTest {
     @Test
     @DisplayName("Should set new values for the attibutes")
     void testSet(){
-        BankAccount myBankAccount = new BankAccount(1000F, 12F);
         float updatedBalance = 8000F;
         myBankAccount.setBalance(updatedBalance);
         int deposits = 2;
@@ -42,6 +47,12 @@ public class BankAccountTest {
         assertThat(myBankAccount.getDeposits(), is (2));
         assertThat(myBankAccount.getWithdrawals(), is (5));
         assertThat(myBankAccount.getMonthlyfee(), is(1000F));
+    }
+
+    @Test
+    @DisplayName("Should receive money and update balance")
+    void testMakeDeposit(){
+
     }
     
 }
