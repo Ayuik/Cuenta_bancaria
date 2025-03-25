@@ -52,7 +52,11 @@ public class BankAccountTest {
     @Test
     @DisplayName("Should receive money and update balance")
     void testMakeDeposit(){
-
+        float deposit_money = 4000F;
+        float current_balance = myBankAccount.getBalance();
+        int current_deposits = myBankAccount.getDeposits();
+        myBankAccount.makeDeposit(current_deposits, deposit_money, current_balance);
+         assertThat(myBankAccount.getBalance(), is(5000F));
+        assertThat(myBankAccount.getDeposits(), is (1))
     }
-    
 }
