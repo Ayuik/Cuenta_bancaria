@@ -15,11 +15,13 @@ public class BankAccountTest {
         int deposits = myBankAccount.getDeposits();
         int withdrawals = myBankAccount.getWithdrawals();
         float monthlyfee = myBankAccount.getMonthlyfee();
+        float balance = myBankAccount.getBalance();
+        float annualinterest = myBankAccount.getAnnualinterest();
         assertThat(deposits, is(0));
         assertThat(withdrawals, is(0));
-        assertThat(monthlyfee, is(0));
-        assertThat(balance.getbalance(), is(1000F));
-        assertThat(annualinterest.getAnnualinterest(), is (12F));  
+        assertThat(monthlyfee, is(0F));
+        assertThat(balance, is(1000F));
+        assertThat(annualinterest, is (12F));  
     }
     
 }
