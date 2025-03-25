@@ -62,11 +62,9 @@ public class BankAccountTest {
 
     @Test
     @DisplayName("Should charge a monthlyfee and update balance")
-    void chargeMonthlyfee(){
+    void testChargeMonthlyfee(){
         myBankAccount.setMonthlyfee(30F);
-        float monthlyfee = myBankAccount.getMonthlyfee();
-        float current_balance = myBankAccount.getBalance();
-        myBankAccount.chargeMonthlyfee(current_balance, monthlyfee);
-        assertThat(myBankAccount.getBalance(), is (1970F));
+        myBankAccount.chargeMonthlyfee();
+        assertThat(myBankAccount.getBalance(), is (970F));
     }
 }
