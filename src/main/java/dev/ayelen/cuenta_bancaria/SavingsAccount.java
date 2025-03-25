@@ -12,4 +12,11 @@ public class SavingsAccount extends BankAccount {
         return isActive;
     }
 
+    public boolean setIsActive(){
+        if(getBalance() < 10000F){
+            return this.isActive = false;
+        } 
+        return this.isActive = true;
+    }
+
 }
