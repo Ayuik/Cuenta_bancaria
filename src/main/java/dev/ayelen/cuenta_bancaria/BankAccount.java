@@ -35,6 +35,22 @@ public class BankAccount {
         return annualinterest;
     }
 
+    public void setBalance(float balance) {
+        this.balance = balance;
+    }
+
+    public void setDeposits(int deposits) {
+        this.deposits = deposits;
+    }
+
+    public void setWithdrawals(int withdrawals) {
+        this.withdrawals = withdrawals;
+    }
+
+    public void setMonthlyfee(float monthlyfee) {
+        this.monthlyfee = monthlyfee;
+    }
+
     
     
 }
