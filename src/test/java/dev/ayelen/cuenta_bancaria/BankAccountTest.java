@@ -57,6 +57,6 @@ public class BankAccountTest {
         int current_deposits = myBankAccount.getDeposits();
         myBankAccount.makeDeposit(current_deposits, deposit_money, current_balance);
          assertThat(myBankAccount.getBalance(), is(5000F));
-        assertThat(myBankAccount.getDeposits(), is (1))
+        assertThat(myBankAccount.getDeposits(), is (1));
     }
 }
