@@ -65,4 +65,13 @@ public class BankAccountTest {
         myBankAccount.chargeMonthlyfee();
         assertThat(myBankAccount.getBalance(), is (970F));
     }
+
+    @Test
+    @DisplayName("Should generate an account statement including the interests")
+    void testGenerateAccountStatement(){
+        myBankAccount.setMonthlyfee(30F);
+        myBankAccount.generateAccountStatement();
+        assertThat(myBankAccount.getBalance(), is(979.7F));
+
+    }
 }
