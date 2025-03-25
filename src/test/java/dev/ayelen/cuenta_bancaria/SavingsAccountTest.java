@@ -10,8 +10,8 @@ public class SavingsAccountTest {
     @Test
     @DisplayName("Should extend from BankAccount")
     void testInheritance(){
-        SavingsAccount savingsAccount = new SavingsAccount();
-        assertTrue(savingsAccount instanceOf BankAccount);
+        SavingsAccount savingsAccount = new SavingsAccount(2000F, 24F);
+        assertTrue(savingsAccount instanceof BankAccount);
     }
     
 }
