@@ -1,4 +1,4 @@
-package dev.mabel.template_java;
+package dev.ayelen.cuenta_bancaria;
 public final class App {
     private App() {}
 
