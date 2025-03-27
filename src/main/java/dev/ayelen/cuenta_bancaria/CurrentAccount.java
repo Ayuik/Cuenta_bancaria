@@ -43,4 +43,8 @@ public class CurrentAccount extends BankAccount {
             super.makeDeposit(deposit_money);
         }
     }
+
+    public void generateCurrentAccountStatement() {
+        super.generateAccountStatement();
+    }
 }
