@@ -59,6 +59,15 @@ public class BankAccountTest {
     }
 
     @Test
+    @DisplayName("Should take out money and update balance")
+    void testMakeWithdrawal(){
+        float withdrawal_money = 400F;
+        myBankAccount.makeWithdrawal(withdrawal_money);
+        assertThat(myBankAccount.getBalance(), is(600F));
+        assertThat(myBankAccount.getDeposits(), is (1));
+    }
+
+    @Test
     @DisplayName("Should charge a monthlyfee and update balance")
     void testChargeMonthlyfee(){
         myBankAccount.setMonthlyfee(30F);
