@@ -59,10 +59,12 @@ public class BankAccount {
     }
 
     public void makeWithdrawal (float withdrawal_money){
+        if (withdrawal_money <= getBalance()){
         float updatedBalance = getBalance() - withdrawal_money;
         setBalance(updatedBalance);
         int updatedWithdrawals = getWithdrawals() + 1;
         setDeposits(updatedWithdrawals);
+        }
     }
 
     public float chargeMonthlyfee(){
