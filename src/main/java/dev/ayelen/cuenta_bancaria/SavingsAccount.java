@@ -48,4 +48,12 @@ public class SavingsAccount extends BankAccount {
         super.generateAccountStatement();
         setIsActive();
     }
+
+    public String printSavingsAccountValues(){
+        int operations = getDeposits() + getWithdrawals();
+        String values = "Saldo: " + getBalance() + 
+        "\r\n Número de operaciones: " + operations +
+        "\r\n Comisión mensual: " + getMonthlyfee();
+        return values;
+    }
 }
