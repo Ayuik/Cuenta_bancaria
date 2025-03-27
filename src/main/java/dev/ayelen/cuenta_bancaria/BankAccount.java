@@ -63,7 +63,7 @@ public class BankAccount {
         float updatedBalance = getBalance() - withdrawal_money;
         setBalance(updatedBalance);
         int updatedWithdrawals = getWithdrawals() + 1;
-        setDeposits(updatedWithdrawals);
+        setWithdrawals(updatedWithdrawals);
         }
     }
 

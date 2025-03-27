@@ -58,7 +58,7 @@ public class SavingsAccountTest {
         float withdrawal_money = 4000F;
         savingsAccount.makeWithdrawal(withdrawal_money);
         assertThat(savingsAccount.getBalance(), is(6000F));
-        assertThat(savingsAccount.getDeposits(), is (1));
+        assertThat(savingsAccount.getWithdrawals(), is (1));
 
         savingsAccount.setBalance(5000F);
         savingsAccount.setIsActive();
@@ -83,7 +83,7 @@ public class SavingsAccountTest {
         savingsAccount.makeWithdrawal(500F);
         savingsAccount.generateAccountStatement();
         assertThat(savingsAccount.getBalance(), is(6630F));
-        assertThat(savingsAccount.getIsActive(), is(true));
+        assertThat(savingsAccount.getIsActive(), is(false));
     }
 
 }

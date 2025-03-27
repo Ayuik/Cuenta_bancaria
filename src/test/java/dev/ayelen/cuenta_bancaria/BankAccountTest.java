@@ -64,7 +64,7 @@ public class BankAccountTest {
         float withdrawal_money = 400F;
         myBankAccount.makeWithdrawal(withdrawal_money);
         assertThat(myBankAccount.getBalance(), is(600F));
-        assertThat(myBankAccount.getDeposits(), is (1));
+        assertThat(myBankAccount.getWithdrawals(), is (1));
     }
 
     @Test
