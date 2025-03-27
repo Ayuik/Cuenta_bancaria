@@ -53,5 +53,14 @@ public class CurrentAccountTest {
         assertThat(currentAccount.getBalance(), is(0F));
         assertThat(currentAccount.getOverdraft(), is (150F));
     }
+
+    @Test
+    @DisplayName("Should inherit generateAccountStatement method from BankAccount")
+    void testInheritance_generateAccountStatement() {
+        currentAccount.makeWithdrawal(1200F);       
+        currentAccount.makeDeposit(1000F);
+        currentAccount.generateCurrentAccountStatement();
+        assertThat(currentAccount.getBalance(), is(808F));
+    }   
     
 }

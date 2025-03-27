@@ -34,15 +34,13 @@ public class CurrentAccount extends BankAccount {
             setOverdraft(0F);
             setBalance(getBalance() + money_left);
             int updatedDeposits = getDeposits() + 1;
-    setDeposits(updatedDeposits);
-            } else if (getOverdraft() > 0 && deposit_money < getOverdraft()) {
-                setOverdraft(getOverdraft() - deposit_money);
-                int updatedDeposits = getDeposits() + 1;
-    setDeposits(updatedDeposits);
-            } else {
-                super.makeDeposit(deposit_money);
-            }
+            setDeposits(updatedDeposits);
+        } else if (getOverdraft() > 0 && deposit_money < getOverdraft()) {
+            setOverdraft(getOverdraft() - deposit_money);
+            int updatedDeposits = getDeposits() + 1;
+            setDeposits(updatedDeposits);
+        } else {
+            super.makeDeposit(deposit_money);
+        }
     }
 }
-
-
