@@ -62,5 +62,20 @@ public class CurrentAccountTest {
         currentAccount.generateCurrentAccountStatement();
         assertThat(currentAccount.getBalance(), is(808F));
     }   
+
+    @Test
+    @DisplayName("Should print the values of balance, operations, monthlyfee and overdraft")
+    void testPrintCurrentAccountValues() {
+        currentAccount.makeWithdrawal(1200F);       
+        currentAccount.makeDeposit(1000F);
+        currentAccount.makeDeposit(30F);
+        currentAccount.makeDeposit(900F);
+        String values = currentAccount.printCurrentAccountValues();
+        assertThat(values, is("Saldo: " + 1730F +
+        "\r\n Comisión mensual: " + 0F + 
+        "\r\n Número de operaciones: " + 4 + 
+        "\\r\\n Sobregiro: " + 0F));
+        
+    }
     
 }
