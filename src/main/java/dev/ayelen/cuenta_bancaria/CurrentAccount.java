@@ -47,4 +47,13 @@ public class CurrentAccount extends BankAccount {
     public void generateCurrentAccountStatement() {
         super.generateAccountStatement();
     }
+
+    public String printCurrentAccountValues() {
+        int operations = getDeposits() + getWithdrawals();
+        String values = "Saldo: " + getBalance() + 
+        "\r\n Comisión mensual: " + getMonthlyfee() + 
+        "\r\n Número de operaciones: " + operations +
+        "\\r\\n Sobregiro: " + getOverdraft();
+        return values;
+    }
 }
