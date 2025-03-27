@@ -86,4 +86,16 @@ public class SavingsAccountTest {
         assertThat(savingsAccount.getIsActive(), is(false));
     }
 
+    @Test
+    @DisplayName("Should print the values of balance, monthlyfee and operations")
+    void testPrintSavingsAccountValues(){
+        savingsAccount.makeDeposit(3000F);
+        savingsAccount.makeDeposit(6000F);
+        savingsAccount.makeWithdrawal(500F);
+        String values = savingsAccount.printSavingsAccountValues();
+        assertThat(values, is("Saldo: " + savingsAccount.getBalance() + 
+        "\r\n Número de operaciones: " + 3 +         
+        "\r\n Comisión mensual: " + savingsAccount.getMonthlyfee()));
+    }
+
 }
