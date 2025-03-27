@@ -31,4 +31,12 @@ public class SavingsAccount extends BankAccount {
         }
     }
 
+    public void calculateMonthlyfee(){
+        if (getWithdrawals() > 4){
+            int extraWithdrawals = getWithdrawals() - 4;
+            float monthlyfee = extraWithdrawals * 1000F;
+            setMonthlyfee(monthlyfee);
+        }
+    }
+
 }
