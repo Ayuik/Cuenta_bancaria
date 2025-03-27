@@ -33,6 +33,8 @@ public class CurrentAccount extends BankAccount {
             float money_left = deposit_money - getOverdraft();
             setOverdraft(0F);
             setBalance(getBalance() + money_left);
+            } else if (getOverdraft() > 0 && deposit_money < getOverdraft()) {
+                setOverdraft(getOverdraft() - deposit_money);
             } else {
                 super.makeDeposit(deposit_money);
             }

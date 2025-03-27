@@ -29,7 +29,7 @@ public class CurrentAccountTest {
     }
 
     @Test
-    @DisplayName("Should allow makeWithdrawal if money_withdrawal is higher than balance and set an overdraft")
+    @DisplayName("Should allow makeWithdrawal if money_withdrawal is greater than balance and set an overdraft")
     void makeWithdrawal() {
         currentAccount.makeWithdrawal(1200F);
         assertTrue(currentAccount.getBalance() == 0F);
@@ -47,7 +47,7 @@ public class CurrentAccountTest {
 
     @Test 
     @DisplayName("A deposit should update overdraft and balance")
-    void makeDeposit_deposit_monoeyIsLessThanOverdraft() {
+    void makeDeposit_deposit_moneyIsLessThanOverdraft() {
         currentAccount.makeWithdrawal(1200F);       
         currentAccount.makeDeposit(50F);
         assertThat(currentAccount.getBalance(), is(0F));
