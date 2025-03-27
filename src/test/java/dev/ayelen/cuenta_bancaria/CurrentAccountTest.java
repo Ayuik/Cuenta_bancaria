@@ -33,5 +33,14 @@ public class CurrentAccountTest {
         assertTrue(currentAccount.getBalance() == 0F);
         assertTrue(currentAccount.getOverdraft() == 200F);
     }
+
+    @Test 
+    @DisplayName("A deposit should update overdraft and balance")
+    void makeDeposit() {
+        currentAccount.makeWithdrawal(1200F);
+        currentAccount.makeDeposit(1000F);
+        assertTrue(currentAccount.getBalance() == 800F);
+        assertTrue(currentAccount.getOverdraft() == 0F);
+    }
     
 }
