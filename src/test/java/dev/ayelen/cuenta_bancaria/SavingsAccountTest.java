@@ -68,7 +68,7 @@ public class SavingsAccountTest {
 
     @Test
     void setCalculateMonthlyfee() {
-        savingsAccount.setDeposits(6);
+        savingsAccount.setWithdrawals(6);
         savingsAccount.calculateMonthlyfee();
         assertThat(savingsAccount.getMonthlyfee(), is(2000F));
     }
