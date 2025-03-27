@@ -25,4 +25,10 @@ public class SavingsAccount extends BankAccount {
         }
     }   
 
+    public void makeWithdrawal(float withdrawal_money){
+        if(isActive){
+            super.makeWithdrawal(withdrawal_money);
+        }
+    }
+
 }
