@@ -39,9 +39,19 @@ public class CurrentAccountTest {
     @Test 
     @DisplayName("A deposit should update overdraft and balance")
     void makeDeposit() {
-        currentAccount.makeWithdrawal(1200F);       currentAccount.makeDeposit(1000F);
+        currentAccount.makeWithdrawal(1200F);       
+        currentAccount.makeDeposit(1000F);
         assertThat(currentAccount.getBalance(), is(800F));
         assertThat(currentAccount.getOverdraft(), is (0F));
+    }
+
+    @Test 
+    @DisplayName("A deposit should update overdraft and balance")
+    void makeDeposit_deposit_monoeyIsLessThanOverdraft() {
+        currentAccount.makeWithdrawal(1200F);       
+        currentAccount.makeDeposit(50F);
+        assertThat(currentAccount.getBalance(), is(0F));
+        assertThat(currentAccount.getOverdraft(), is (150F));
     }
     
 }
