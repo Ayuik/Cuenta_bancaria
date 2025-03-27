@@ -52,4 +52,18 @@ public class SavingsAccountTest {
         assertThat(savingsAccount.getBalance(), is(300F));
     }
 
+    @Test
+    @DisplayName("Should take out money and update balance if isActive is true")
+    void testMakeWithdrawal(){
+        float withdrawal_money = 4000F;
+        savingsAccount.makeWithdrawal(withdrawal_money);
+        assertThat(savingsAccount.getBalance(), is(6000F));
+        assertThat(savingsAccount.getDeposits(), is (1));
+
+        savingsAccount.setBalance(5000F);
+        savingsAccount.setIsActive();
+        savingsAccount.makeWithdrawal(withdrawal_money);
+        assertThat(savingsAccount.getBalance(), is(5000F));
+    }
+
 }
