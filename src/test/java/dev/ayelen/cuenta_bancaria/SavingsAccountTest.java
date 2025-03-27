@@ -1,5 +1,7 @@
 package dev.ayelen.cuenta_bancaria;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -34,6 +36,20 @@ public class SavingsAccountTest {
         savingsAccount.setBalance(5000);
         savingsAccount.setIsActive();
         assertFalse(savingsAccount.getIsActive());
+    }
+
+    @Test
+    @DisplayName("Should receive money and update balance if isActive is true")
+    void testMakeDeposit(){
+        float deposit_money = 4000F;
+        savingsAccount.makeDeposit(deposit_money);
+        assertThat(savingsAccount.getBalance(), is(14000F));
+        assertThat(savingsAccount.getDeposits(), is (1));
+
+        savingsAccount.setBalance(300F);
+        savingsAccount.setIsActive();
+        savingsAccount.makeDeposit(deposit_money);
+        assertThat(savingsAccount.getBalance(), is(300F));
     }
 
 }
