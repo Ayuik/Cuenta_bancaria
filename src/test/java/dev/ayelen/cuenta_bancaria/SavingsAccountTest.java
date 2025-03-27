@@ -73,4 +73,17 @@ public class SavingsAccountTest {
         assertThat(savingsAccount.getMonthlyfee(), is(2000F));
     }
 
+    @Test
+    @DisplayName("Should generate an account statement and set isActive")
+    void testGenerateAccountStatement(){
+        savingsAccount.makeWithdrawal(500F);
+        savingsAccount.makeWithdrawal(500F);
+        savingsAccount.makeWithdrawal(500F);
+        savingsAccount.makeWithdrawal(500F);
+        savingsAccount.makeWithdrawal(500F);
+        savingsAccount.generateAccountStatement();
+        assertThat(savingsAccount.getBalance(), is(6630F));
+        assertThat(savingsAccount.getIsActive(), is(true));
+    }
+
 }
