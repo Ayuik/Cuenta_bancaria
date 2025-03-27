@@ -10,7 +10,7 @@ public class CurrentAccountTest {
     @Test
     @DisplayName("Should extend from BankAccount")
     void testInheritance() {
-        CurrentAccount currentAccount = new CurrentAccount();
+        CurrentAccount currentAccount = new CurrentAccount(1000F, 12F);
         assertTrue(currentAccount instanceof BankAccount);
     }
 }
