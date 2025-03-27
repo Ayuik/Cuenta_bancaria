@@ -15,6 +15,13 @@ public class CurrentAccountTest {
     }
 
     @Test
+    @DisplayName("Should have an overdraft attribute set to 0")
+    void testOverdraft() {
+        CurrentAccount currentAccount = new CurrentAccount(1000F, 12F);
+        assertTrue(currentAccount.getOverdraft() == 0F);
+    }
+
+    @Test
     @DisplayName("Should allow makeWithdrawal if money_withdrawal is higher than balance and set an overdraft")
     void makeWithdrawal() {
         CurrentAccount currentAccount = new CurrentAccount(1000F, 12F);
@@ -22,4 +29,6 @@ public class CurrentAccountTest {
         assertTrue(currentAccount.getBalance() == 0F);
         assertTrue(currentAccount.getOverdraft() == 200F);
     }
+
+    
 }
