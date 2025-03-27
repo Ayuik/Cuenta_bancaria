@@ -19,4 +19,10 @@ public class SavingsAccount extends BankAccount {
         return this.isActive = true;
     }
 
+    public void makeDeposit(float deposit_money){
+        if(isActive){
+            super.makeDeposit(deposit_money);
+        }
+    }   
+
 }
