@@ -1,6 +1,8 @@
 package dev.ayelen.cuenta_bancaria;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -37,10 +39,9 @@ public class CurrentAccountTest {
     @Test 
     @DisplayName("A deposit should update overdraft and balance")
     void makeDeposit() {
-        currentAccount.makeWithdrawal(1200F);
-        currentAccount.makeDeposit(1000F);
-        assertTrue(currentAccount.getBalance() == 800F);
-        assertTrue(currentAccount.getOverdraft() == 0F);
+        currentAccount.makeWithdrawal(1200F);       currentAccount.makeDeposit(1000F);
+        assertThat(currentAccount.getBalance(), is(800F));
+        assertThat(currentAccount.getOverdraft(), is (0F));
     }
     
 }
